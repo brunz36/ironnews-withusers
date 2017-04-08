@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   # GET /stories
   def index
-    @stories = Story.all.reverse
+    @stories = Story.all.order(created_at: :desc).page params[:page]
   end
 
   # GET /stories/1
