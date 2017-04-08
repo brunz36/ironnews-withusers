@@ -23,14 +23,15 @@
       <%- @stories.each.with_index do |story, index| %>
         <tr>
           <td class="text-center"><%= index + 1 %></td>
-          <td><%= link_to story.title, story.url_link %></td>
+          <td class="lead"><%= link_to story.title, story.url_link %></td>
           <!-- <td><%= story.title %></td> -->
           <!-- <td><%= story.url_link %></td> -->
           <td><%= story.email %></td>
           <td><%= distance_of_time_in_words(Time.now - story.created_at) %></td>
           <td>
             <%= link_to story do %>
-              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              <span class="badge">Comments</span>
+              <!-- <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> -->
             <% end %>
           </td>
           <!-- <td>
