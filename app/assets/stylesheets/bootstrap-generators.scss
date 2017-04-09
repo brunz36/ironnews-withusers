@@ -27,6 +27,10 @@ h1 {
   font-size: 336%;
 }
 
+h5 {
+  color: #fff;
+}
+
 nav a {
   font-size: 150%;
   color: #fff;
@@ -50,6 +54,14 @@ nav.pagination {
   letter-spacing: 1px;
 }
 
+.paginate {
+  margin-bottom: 5em;
+}
+
 .jumbotron {
   padding: 1em;
+}
+
+.footer {
+  font-size: 90%;
 }
