@@ -32,8 +32,12 @@ nav a {
   color: #fff;
 }
 
+.landing_header {
+  margin: 40px 0 20px;
+}
+
 .row {
-  padding: 0;
+  padding: 0.3em;
   margin: 0 1em;
 }
 
@@ -44,4 +48,8 @@ nav a {
 nav.pagination {
   margin: 0;
   letter-spacing: 1px;
+}
+
+.jumbotron {
+  padding: 1em;
 }

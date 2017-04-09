@@ -1,26 +1,28 @@
-<div class="page-header">
+<div class="page-header well well-sm">
   <%= link_to stories_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+    <span class="glyphicon glyphicon-hand-left"></span>
+    &nbsp;Back
   <% end %>
-  <%= link_to edit_story_path(@story), class: 'btn btn-primary' do %>
+  <%= link_to edit_story_path(@story), class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-pencil"></span>
-    Edit
+    &nbsp;Edit
   <% end %>
-  <%= link_to @story, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' do %>
+  <%= link_to @story, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-trash"></span>
-    Delete
+    &nbsp;Delete
   <% end %>
-  <h2>Story Comments</h2>
+  <h1>Story Comments</h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Title:</dt>
-  <dd><%= @story.title %></dd>
+<dl class="jumbotron dl-horizontal">
+  <h3>
+    <dt>Title:</dt>
+    <dd><%= link_to @story.title, @story.url_link %></dd>
 
-  <dt>Url link:</dt>
-  <dd><%= @story.url_link %></dd>
+    <dt>Url link:</dt>
+    <dd><%= link_to @story.url_link, @story.url_link %></dd>
 
-  <dt>Email:</dt>
-  <dd><%= @story.email %></dd>
+    <dt>Email:</dt>
+    <dd><%= @story.email %></dd>
+  </h3>
 </dl>
