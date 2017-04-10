@@ -21,13 +21,9 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
-
-    if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
-    else
-      render :new
-    end
+    @story = Story.find(params[:story_id])
+    @comment = @story.comments.create(comment_params)
+    redirect_to story_path(@story)
   end
 
   # PATCH/PUT /comments/1
