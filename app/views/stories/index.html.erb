@@ -24,7 +24,7 @@
       <div class="panel-body row">
         <%= story.email %>
         <div class="pull-right">
-          Created about <%= distance_of_time_in_words(Time.now - story.created_at) %> ago
+          Created about <%= time_ago_in_words(story.created_at) %> ago
         </div>
       </div>
     </div>
