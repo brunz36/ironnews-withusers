@@ -26,14 +26,15 @@
     <dd><%= @story.email %></dd>
   </h3>
 </dl>
-
-<h2>Comments</h2>
-<% @story.comments.each do |comment| %>
+<div class="well well-sm well-default">
+  <h2>Comments</h2>
+  <% @story.comments.each do |comment| %>
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-<% end %>
+  <% end %>
+</div>
 
 <h2>Add a comment:</h2>
 <%= form_for([@story, @story.comments.build]) do |f| %>
@@ -45,6 +46,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-<!-- <%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %> -->

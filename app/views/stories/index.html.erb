@@ -17,7 +17,7 @@
         &nbsp;<%= link_to story.title, story.url_link %>
         <div class="pull-right">
           <%= link_to story do %>
-          <div class="badge">Edit Post</div>
+          <div class="badge">Comments <%= story.comments.count %></div>
           <% end %>
         </div>
       </div>
