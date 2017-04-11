@@ -1,3 +1,4 @@
+@import "superhero.scss";
 @import "bootstrap-variables.scss";
 @import "bootstrap-sprockets.scss";
 @import "bootstrap.scss";
@@ -20,48 +21,4 @@ input[type="radio"], input[type="checkbox"] {
   width: initial;
   height: initial;
   margin-top: 7px;
-}
-
-h1 {
-  color: #fff;
-  font-size: 336%;
-}
-
-h5 {
-  color: #fff;
-}
-
-nav a {
-  font-size: 150%;
-  color: #fff;
-}
-
-.landing_header {
-  margin: 40px 0 20px;
-}
-
-.row {
-  padding: 0.3em;
-  margin: 0 1em;
-}
-
-.well-sm {
-  color: #fff;
-}
-
-nav.pagination {
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.paginate {
-  margin-bottom: 5em;
-}
-
-.jumbotron {
-  padding: 1em;
-}
-
-.footer {
-  font-size: 90%;
 }
