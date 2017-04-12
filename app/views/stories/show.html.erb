@@ -30,7 +30,7 @@
 <h2>Comments</h2>
 <% @story.comments.each do |comment| %>
   <p>
-    <strong>Comment:</strong>
+    <strong><%= @story.created_by.name %>: </strong>
     <%= comment.body %>
   </p>
 <% end %>

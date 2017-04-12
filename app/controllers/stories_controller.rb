@@ -3,7 +3,6 @@ class StoriesController < ApplicationController
 
   # GET /stories
   def index
-
     @stories = Story.all.order(created_at: :desc).page params[:page]
   end
 
@@ -20,6 +19,11 @@ class StoriesController < ApplicationController
   # GET /stories/1/edit
   def edit
     @story = Story.find(params[:id])
+
+    unless @story.can_this_user_edit?(current_user)
+      redirect_to stories_path, notice: 'You may not edit other users posts.'
+      return
+    end
   end
 
   # POST /stories
@@ -37,6 +41,12 @@ class StoriesController < ApplicationController
   # PATCH/PUT /stories/1
   def update
     @story = Story.find(params[:id])
+
+    unless @story.can_this_user_edit?(current_user)
+      redirect_to stories_path, notice: 'You may not edit other users posts.'
+      return
+    end
+
     if @story.update(story_params)
       redirect_to @story, notice: 'Story was successfully updated.'
     else
@@ -47,8 +57,13 @@ class StoriesController < ApplicationController
   # DELETE /stories/1
   def destroy
     @story = Story.find(params[:id])
-    @story.destroy
-    redirect_to stories_url, notice: 'Story was successfully destroyed.'
+
+    unless @story.can_this_user_destroy?(current_user)
+      redirect_to stories_path, notice: 'You may not delete other users posts.'
+    else
+      @story.destroy
+      redirect_to stories_url, notice: 'Story was successfully destroyed.'
+    end
   end
 
   private
