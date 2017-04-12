@@ -31,7 +31,7 @@
 <% @story.comments.each do |comment| %>
   <p>
     <% if comment.created_by %>
-      <strong><%= comment.created_by.name %> Comment: </strong>
+      <strong><%= comment.created_by.name %>: </strong>
     <% end %>
     <%= comment.body %>
   </p>
