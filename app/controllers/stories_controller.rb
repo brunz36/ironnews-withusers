@@ -9,6 +9,7 @@ class StoriesController < ApplicationController
   # GET /stories/1
   def show
     @story = Story.find(params[:id])
+    @comment = Comment.find_by(params[:story_id])
   end
 
   # GET /stories/new
